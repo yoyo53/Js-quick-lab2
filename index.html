@@ -10,7 +10,8 @@
 
         fetch(url)
         .then(response => {
-	    document.write("<h2>users</h2>");
+	    document.write("<h2>users</h2>")
+            document.write(response);
             document.write("<ul>");
             for (let object of response) {
                 document.write("<li> " + object.name + "</li>");
