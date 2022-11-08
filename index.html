@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quick Lab 2</title>
+</head>
+<body>
+    <script>
+        const url = 'https://jsonplaceholder.typicode.com/users';
+
+        fetch(url)
+        .then(response => {
+	    document.write("<h2>users</h2>");
+            document.write("<ul>");
+            for (let object of response) {
+                document.write("<li> " + object.name + "</li>");
+            }
+            document.write("</ul>");
+	})
+    </script>
+</body>
+
+</html>
+Footer
