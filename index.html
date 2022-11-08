@@ -7,15 +7,14 @@
 	<body>
 	    <script>
 		const url = 'https://jsonplaceholder.typicode.com/users';
-
 		fetch(url)
-		.then(response => {
-		    document.write("<h2>users</h2>")
-		    document.write("<ul>");
-		    for (let object of response.json) {
-			document.write("<li> " + object.name + "</li>");
+		.then(response => response.json())
+        .then(data => {
+		    let text = "";
+		    for (let object of data) {
+			    text += `<li>${object.name}</li>`
 		    }
-		    document.write("</ul>");
+            document.body.innerHTML = `<h2>users</h2><ul>${text}</ul>`;
 		})
 	    </script>
 	</body>
